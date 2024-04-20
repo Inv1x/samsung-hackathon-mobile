@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">samsung-hackathon-mobile</string>
+    <string name="login" >Логин</string>
+    <string name="password">Пароль</string>
+    <string name="nameuser">Имя пользователя</string>
+    <string name="opisanie">Добавить более подробное описание...</string>
+    <string name="comment">Напишите комментарий</string>
+    <string name="colon">в колонке TO DO</string>
 </resources>

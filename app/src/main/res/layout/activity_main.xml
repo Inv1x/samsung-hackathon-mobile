@@ -7,34 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity" >
 
-    <TableLayout
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
 
-        <TableRow
-        <EditText
-            android:textSize="22dp"
-            android:layout_width="40dp"
-            android:gravity="center_horizontal"
-            android:layout_height="wrap_content"  />
-            />
 
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </TableLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
