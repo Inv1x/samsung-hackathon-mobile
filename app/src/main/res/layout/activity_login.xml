@@ -1,90 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="200dp"
+        android:id="@+id/loginHeader"
+        android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_marginTop="10dp"
-        android:fontFamily=""
-        android:gravity="center"
-        android:text="ВХОД"
-        android:textSize="20dp"
+        android:fontFamily="@font/nt_somic"
         android:textStyle="bold"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0.05" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField"
+        android:id="@+id/loginInput"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
+        android:layout_marginTop="72dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="100dp"
+        app:layout_constraintTop_toBottomOf="@id/loginHeader"
         android:hint="@string/login"
-        app:layout_constraintTop_toBottomOf="@id/textView">
+        android:fontFamily="@font/nt_somic"
+        app:endIconMode="clear_text"
         >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:background="@drawable/sh_et_background"
-            android:layout_height="61dp" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nt_somic" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textField2"
+        android:id="@+id/passwordInput"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        app:endIconMode="clear_text"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/loginInput"
         android:hint="@string/password"
-        app:layout_constraintTop_toBottomOf="@id/textField">
+        android:fontFamily="@font/nt_somic"
+        app:endIconMode="password_toggle"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:background="@drawable/sh_et_background"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nt_somic"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/buttonforjoin"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-
-        android:backgroundTint="@color/white"
-        android:textSize="18dp"
-        android:text="ВХОД"
-        android:textColor="@color/black"
-        android:textStyle="bold"
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/textField2"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/nt_somic"
+        android:text="@string/log_in"
+        android:textColor="@color/black"
+        android:textFontWeight="500"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toBottomOf="@id/passwordInput" />
 
     <Button
-        android:id="@+id/buttonforRegister"
-        android:layout_width="185dp"
-        android:layout_height="45dp"
-        android:backgroundTint="@color/white"
-        android:text="Регистрация"
+        android:id="@+id/registerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/transparent"
+        android:text="@string/registration"
+        android:fontFamily="@font/nt_somic"
         android:textColor="@color/black"
-        android:textSize="12dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonforjoin"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         />
