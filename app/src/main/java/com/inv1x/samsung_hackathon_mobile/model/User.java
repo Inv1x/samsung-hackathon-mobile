@@ -7,9 +7,9 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class Board {
+public class User {
     private long id;
-    private String title;
-    private User owner;
-    private Set<User> collaborators;
+    private String username;
+    private String email;
+    private Set<Board> boards;
 }
