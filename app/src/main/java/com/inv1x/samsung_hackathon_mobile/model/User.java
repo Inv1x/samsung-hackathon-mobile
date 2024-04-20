@@ -12,4 +12,6 @@ public class User {
     private String username;
     private String email;
     private Set<Board> boards;
+
+    private Set<ColumnTask> tasks;
 }
