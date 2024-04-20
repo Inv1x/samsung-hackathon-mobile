@@ -32,7 +32,6 @@ android {
 }
 
 dependencies {
-    implementation ("com.google.android.material:material:<version>")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
