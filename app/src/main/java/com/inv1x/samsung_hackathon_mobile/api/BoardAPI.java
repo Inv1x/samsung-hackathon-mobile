@@ -7,8 +7,15 @@ import java.util.Set;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
+import retrofit2.http.DELETE;
+import retrofit2.http.GET;
+import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 
 public class BoardAPI {
     private final OkHttpClient client;
@@ -33,4 +40,64 @@ public class BoardAPI {
             throw new RuntimeException(e);
         }
     }
+    public Board createBoard(Board board){
+        try {
+            return boardAPI.createBoard(board).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Board getBoard(long id){
+        try {
+            return boardAPI.getBoard(id).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Board updateBoard(long id, Board board){
+        try {
+            return boardAPI.updateBoard(id, board).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void deleteBoard(long id){
+        boardAPI.deleteBoard(id);  // TODO проверка что такая вообще существует
+    }
+
+    public Board addColumn(long boardId, long columnId){
+        try {
+            return boardAPI.addColumn(boardId, columnId).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Board removeColumn(long boardId, long columnId){
+        try {
+            return boardAPI.removeColumn(boardId, columnId).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Board addCollaborator(long boardId, long collaboratorId){
+        try {
+            return boardAPI.addCollaborator(boardId, collaboratorId).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public Board removeCollaborator(long boardId, long collaboratorId){
+        try {
+            return boardAPI.removeCollaborator(boardId, collaboratorId).execute().body();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }
