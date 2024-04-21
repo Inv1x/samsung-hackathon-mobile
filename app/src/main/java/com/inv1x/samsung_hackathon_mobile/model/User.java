@@ -14,4 +14,5 @@ public class User {
     private Set<Board> boards;
 
     private Set<ColumnTask> tasks;
+
 }

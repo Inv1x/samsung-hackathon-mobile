@@ -13,6 +13,8 @@ lifecycleViewmodelKtx = "2.6.1"
 lombok = "1.18.32"
 retrofit = "2.11.0"
 converterGson = "2.11.0"
+navigationFragment = "2.6.0"
+navigationUi = "2.6.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -28,6 +30,8 @@ lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-view
 lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
 retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
 converterGson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
+navigation-fragment = { group = "androidx.navigation", name = "navigation-fragment", version.ref = "navigationFragment" }
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui", version.ref = "navigationUi" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
