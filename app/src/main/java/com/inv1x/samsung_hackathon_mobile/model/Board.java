@@ -12,4 +12,5 @@ public class Board {
     private String title;
     private User owner;
     private Set<User> collaborators;
+    private Set<BoardColumn> columns;
 }
