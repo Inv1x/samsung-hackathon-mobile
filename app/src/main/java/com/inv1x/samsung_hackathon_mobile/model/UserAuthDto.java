@@ -8,11 +8,13 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class UserAuthDto {
+    private int id;
     private String email;
     private String password;
 
-    public UserAuthDto(EditText loginInput, EditText passwordInput) {
-        this.email = loginInput.toString();
-        this.password = passwordInput.toString();
+    public UserAuthDto(int id, String loginInput, String passwordInput) {
+        this.id = id;
+        this.email = loginInput;
+        this.password = passwordInput;
     }
 }

@@ -2,6 +2,7 @@ package com.inv1x.samsung_hackathon_mobile.api;
 
 import com.inv1x.samsung_hackathon_mobile.model.User;
 import com.inv1x.samsung_hackathon_mobile.model.UserAuthDto;
+import com.inv1x.samsung_hackathon_mobile.model.UserRegisterDto;
 
 import java.io.IOException;
 import java.util.List;
@@ -48,7 +49,7 @@ public class UserAPI {
         }
     }
 
-    public User registerUser(UserAuthDto user){
+    public User registerUser(UserRegisterDto user){
         try {
             return userAPI.registerUser(user).execute().body();
         } catch (IOException e) {

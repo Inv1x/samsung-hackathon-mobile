@@ -2,6 +2,7 @@ package com.inv1x.samsung_hackathon_mobile.api;
 
 import com.inv1x.samsung_hackathon_mobile.model.User;
 import com.inv1x.samsung_hackathon_mobile.model.UserAuthDto;
+import com.inv1x.samsung_hackathon_mobile.model.UserRegisterDto;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public interface IUserAPI {
     Call<List<User>> getAllUsers();
 
     @POST("users/register")
-    Call<User> registerUser(@Body UserAuthDto user);
+    Call<User> registerUser(@Body UserRegisterDto user);
 
     @GET("users/login")
     Call<User> loginUser(@Body UserAuthDto user);
