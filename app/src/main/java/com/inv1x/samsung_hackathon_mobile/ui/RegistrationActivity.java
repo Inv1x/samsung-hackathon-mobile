@@ -14,7 +14,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputLayout;
-import com.inv1x.samsung_hackathon_mobile.BoardActivity;
+import com.inv1x.samsung_hackathon_mobile.BoardListActivity;
 import com.inv1x.samsung_hackathon_mobile.R;
 import com.inv1x.samsung_hackathon_mobile.api.IUserAPI;
 import com.inv1x.samsung_hackathon_mobile.api.UserAPI;
@@ -65,7 +65,7 @@ public class RegistrationActivity extends AppCompatActivity {
                                     if (user != null) {
                                         Log.d("RegistrationActivity", "User registered");
                                         runOnUiThread(() -> {
-                                            Intent intent = new Intent(RegistrationActivity.this, BoardActivity.class);
+                                            Intent intent = new Intent(RegistrationActivity.this, BoardListActivity.class);
                                             startActivity(intent);
                                             finish();
                                         });

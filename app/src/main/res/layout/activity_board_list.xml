@@ -7,13 +7,14 @@
     android:layout_height="match_parent"
     tools:context=".BoardListActivity">
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/board_column_recycler_view"
+        android:id="@+id/board_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintHeight_percent="0.8"
         android:clipToPadding="false"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/rounded_corners"
         />
     <Button
         android:id="@+id/loginButton"
@@ -28,6 +29,6 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/board_column_recycler_view" />
+        app:layout_constraintTop_toBottomOf="@id/board_recycler_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
