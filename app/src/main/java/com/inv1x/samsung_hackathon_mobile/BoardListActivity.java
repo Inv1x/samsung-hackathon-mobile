@@ -45,19 +45,21 @@ public class BoardListActivity extends AppCompatActivity {
                         }));
 
         rv.setAdapter(boardListAdapter);
+        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_create_board, null);
 
         MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(this);
-        builder.setTitle(R.string.create_board)
-                .setMessage("Dialog Message")
+        builder.setView(dialogView)
+                .setTitle(R.string.create_board)
                 .setPositiveButton("OK", (dialog, which) -> {
                     // Handle positive button click
-                });
+                })
+                .setOnCancelListener(listener -> {
 
-        View dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_create_board, null);
-        builder.setView(dialogView);
+                })
+        ;
 
         createButton.setOnClickListener(listener -> {
-            builder.show();
+            builder.create().show();
         });
     }
 }
