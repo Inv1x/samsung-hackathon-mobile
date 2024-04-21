@@ -1,6 +1,7 @@
 package com.inv1x.samsung_hackathon_mobile.api;
 
 import com.inv1x.samsung_hackathon_mobile.model.User;
+import com.inv1x.samsung_hackathon_mobile.model.UserAuthDto;
 
 import java.io.IOException;
 import java.util.List;
@@ -39,7 +40,6 @@ public class UserAPI {
     }
 
 
-
     public List<User> getAllUsers(){
         try {
             return userAPI.getAllUsers().execute().body();
@@ -48,7 +48,7 @@ public class UserAPI {
         }
     }
 
-    public User registerUser(User user){
+    public User registerUser(UserAuthDto user){
         try {
             return userAPI.registerUser(user).execute().body();
         } catch (IOException e) {
@@ -56,7 +56,7 @@ public class UserAPI {
         }
     }
 
-    public User loginUser(User user){
+    public User loginUser(UserAuthDto user){
         try {
             return userAPI.loginUser(user).execute().body();
         } catch (IOException e) {
