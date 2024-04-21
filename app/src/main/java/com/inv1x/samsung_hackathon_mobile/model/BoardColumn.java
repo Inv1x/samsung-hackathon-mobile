@@ -9,10 +9,7 @@ import lombok.Data;
 @AllArgsConstructor
 public class BoardColumn {
     private long id;
-
     private String heading;
-
     private Set<ColumnTask> columnTasks;
-
     private Board board;
 }
