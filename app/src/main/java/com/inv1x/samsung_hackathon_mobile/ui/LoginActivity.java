@@ -64,22 +64,24 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Заполните все поля!", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    UserAuthDto userAuthDto = new UserAuthDto(counter++, loginInput.getEditText().getText().toString()
-                            , passwordInput.getEditText().getText().toString());
-                    try {
-                        CompletableFuture.supplyAsync(() -> userAPI.loginUser(userAuthDto))
-                                .thenAccept(user -> {
-                                    if (user != null) {
-                                        Intent intent = new Intent(LoginActivity.this, BoardActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    } else {
-                                        runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Пользователь не существует! Зарегистрируйтесь", Toast.LENGTH_SHORT).show());
-                                    }
-                                });
-                    } catch (RuntimeException e) {
-                        Toast.makeText(LoginActivity.this, "Error!", Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(LoginActivity.this, "Пользователь не существует! Зарегистрируйтесь", Toast.LENGTH_SHORT).show();
+//                    UserAuthDto userAuthDto = new UserAuthDto(counter++, loginInput.getEditText().getText().toString()
+//
+//                            , passwordInput.getEditText().getText().toString());
+//                    try {
+//                        CompletableFuture.supplyAsync(() -> userAPI.loginUser(userAuthDto))
+//                                .thenAccept(user -> {
+//                                    if (user != null) {
+//                                        Intent intent = new Intent(LoginActivity.this, BoardActivity.class);
+//                                        startActivity(intent);
+//                                        finish();
+//                                    } else {
+//                                        runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Пользователь не существует! Зарегистрируйтесь", Toast.LENGTH_SHORT).show());
+//                                    }
+//                                });
+//                    } catch (RuntimeException e) {
+//                        Toast.makeText(LoginActivity.this, "Error!", Toast.LENGTH_SHORT).show();
+//                    }
                 }
             }
         });
