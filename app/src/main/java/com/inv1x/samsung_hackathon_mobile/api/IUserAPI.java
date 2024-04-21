@@ -1,5 +1,6 @@
 package com.inv1x.samsung_hackathon_mobile.api;
 
+import com.inv1x.samsung_hackathon_mobile.data.model.UserAthRegister;
 import com.inv1x.samsung_hackathon_mobile.model.User;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public interface IUserAPI {
     Call<List<User>> getAllUsers();
 
     @POST("users/register")
-    Call<User> registerUser(@Body User user);
+    Call<User> registerUser(@Body UserAthRegister user);
 
     @GET("users/login")
     Call<User> loginUser(@Body User user);

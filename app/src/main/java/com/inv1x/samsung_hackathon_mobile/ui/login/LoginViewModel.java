@@ -8,7 +8,6 @@ import android.util.Patterns;
 
 import com.inv1x.samsung_hackathon_mobile.data.LoginRepository;
 import com.inv1x.samsung_hackathon_mobile.data.Result;
-import com.inv1x.samsung_hackathon_mobile.data.model.LoggedInUser;
 import com.inv1x.samsung_hackathon_mobile.R;
 
 public class LoginViewModel extends ViewModel {

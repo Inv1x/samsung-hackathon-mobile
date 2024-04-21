@@ -1,7 +1,5 @@
 package com.inv1x.samsung_hackathon_mobile.data;
 
-import com.inv1x.samsung_hackathon_mobile.data.model.LoggedInUser;
-
 import java.io.IOException;
 
 /**
