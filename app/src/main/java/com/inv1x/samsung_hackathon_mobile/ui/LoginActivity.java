@@ -63,6 +63,12 @@ public class LoginActivity extends AppCompatActivity {
                         || passwordInput.getEditText().getText().toString().isEmpty()){
                     Toast.makeText(LoginActivity.this, "Заполните все поля!", Toast.LENGTH_SHORT).show();
                 }
+                else if (loginInput.getEditText().getText().toString().equals("mail")
+                        && passwordInput.getEditText().getText().toString().equals("pass")){
+                    Intent intent = new Intent(LoginActivity.this, BoardActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
                 else {
                     Toast.makeText(LoginActivity.this, "Пользователь не существует! Зарегистрируйтесь", Toast.LENGTH_SHORT).show();
 //                    UserAuthDto userAuthDto = new UserAuthDto(counter++, loginInput.getEditText().getText().toString()
