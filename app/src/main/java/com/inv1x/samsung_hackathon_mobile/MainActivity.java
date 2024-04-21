@@ -8,13 +8,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.inv1x.samsung_hackathon_mobile.api.BoardAPI;
 import com.inv1x.samsung_hackathon_mobile.api.UserAPI;
-import com.inv1x.samsung_hackathon_mobile.ui.login.LoginActivity;
+import com.inv1x.samsung_hackathon_mobile.ui.LoginActivity;
 
 import java.util.concurrent.CompletableFuture;
 
 public class MainActivity extends AppCompatActivity {
     public static UserAPI userAPI;
-
     public static BoardAPI boardAPI;
 
     @Override
@@ -45,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean checkUserData() {
         // TODO implement ASAP!
-        return false;
+        return true;
     }
 }
