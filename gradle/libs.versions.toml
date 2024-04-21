@@ -10,6 +10,9 @@ constraintlayout = "2.1.4"
 annotation = "1.6.0"
 lifecycleLivedataKtx = "2.6.1"
 lifecycleViewmodelKtx = "2.6.1"
+lombok = "1.18.32"
+retrofit = "2.11.0"
+converterGson = "2.11.0"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -22,6 +25,9 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 annotation = { group = "androidx.annotation", name = "annotation", version.ref = "annotation" }
 lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycleLivedataKtx" }
 lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+lombok = { group = "org.projectlombok", name = "lombok", version.ref = "lombok" }
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converterGson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "converterGson" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
