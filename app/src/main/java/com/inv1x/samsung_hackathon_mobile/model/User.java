@@ -14,4 +14,44 @@ public class User {
     private Set<Board> boards;
 
     private Set<ColumnTask> tasks;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Set<Board> getBoards() {
+        return boards;
+    }
+
+    public void setBoards(Set<Board> boards) {
+        this.boards = boards;
+    }
+
+    public Set<ColumnTask> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(Set<ColumnTask> tasks) {
+        this.tasks = tasks;
+    }
 }
