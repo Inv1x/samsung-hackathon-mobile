@@ -13,19 +13,19 @@ import android.widget.Toast;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.navigation.ui.AppBarConfiguration;
 
 
 import com.google.android.material.textfield.TextInputLayout;
 import com.inv1x.samsung_hackathon_mobile.BoardListActivity;
 import com.inv1x.samsung_hackathon_mobile.R;
 import com.inv1x.samsung_hackathon_mobile.api.UserAPI;
+import com.inv1x.samsung_hackathon_mobile.model.UserAuthDto;
+
+import java.util.concurrent.CompletableFuture;
 
 public class LoginActivity extends AppCompatActivity {
     public static int counter = 0;
     private UserAPI userAPI = new UserAPI();
-
-    private AppBarConfiguration appBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,31 +52,22 @@ public class LoginActivity extends AppCompatActivity {
                         || passwordInput.getEditText().getText().toString().isEmpty()){
                     Toast.makeText(LoginActivity.this, "Заполните все поля!", Toast.LENGTH_SHORT).show();
                 }
-                else if (loginInput.getEditText().getText().toString().equals("mail")
-                        && passwordInput.getEditText().getText().toString().equals("pass")){
-                    Intent intent = new Intent(LoginActivity.this, BoardListActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
                 else {
-                    Toast.makeText(LoginActivity.this, "Пользователь не существует! Зарегистрируйтесь", Toast.LENGTH_SHORT).show();
-//                    UserAuthDto userAuthDto = new UserAuthDto(counter++, loginInput.getEditText().getText().toString()
-//
-//                            , passwordInput.getEditText().getText().toString());
-//                    try {
-//                        CompletableFuture.supplyAsync(() -> userAPI.loginUser(userAuthDto))
-//                                .thenAccept(user -> {
-//                                    if (user != null) {
-//                                        Intent intent = new Intent(LoginActivity.this, BoardActivity.class);
-//                                        startActivity(intent);
-//                                        finish();
-//                                    } else {
-//                                        runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Пользователь не существует! Зарегистрируйтесь", Toast.LENGTH_SHORT).show());
-//                                    }
-//                                });
-//                    } catch (RuntimeException e) {
-//                        Toast.makeText(LoginActivity.this, "Error!", Toast.LENGTH_SHORT).show();
-//                    }
+                    UserAuthDto userAuthDto = new UserAuthDto(counter++, loginInput.getEditText().getText().toString(), passwordInput.getEditText().getText().toString());
+                    try {
+                        CompletableFuture.supplyAsync(() -> userAPI.loginUser(userAuthDto))
+                                .thenAccept(user -> {
+                                    if (user != null) {
+                                        Intent intent = new Intent(LoginActivity.this, BoardListActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    } else {
+                                        runOnUiThread(() -> Toast.makeText(LoginActivity.this, "Пользователь не существует! Зарегистрируйтесь", Toast.LENGTH_SHORT).show());
+                                    }
+                                });
+                    } catch (RuntimeException e) {
+                        Toast.makeText(LoginActivity.this, "Error!", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         });
