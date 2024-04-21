@@ -25,4 +25,5 @@
     <string name="title">Title</string>
     <string name="create_board">Создать доску</string>
     <string name="show">Просмотр</string>
+    <string name="board_name">Название доски</string>
 </resources>
