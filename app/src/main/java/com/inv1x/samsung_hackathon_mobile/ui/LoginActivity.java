@@ -3,12 +3,9 @@ package com.inv1x.samsung_hackathon_mobile.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -22,15 +19,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import com.google.android.material.textfield.TextInputLayout;
 import com.inv1x.samsung_hackathon_mobile.BoardActivity;
 import com.inv1x.samsung_hackathon_mobile.R;
-import com.inv1x.samsung_hackathon_mobile.api.IUserAPI;
-import com.inv1x.samsung_hackathon_mobile.ui.RegistrationActivity;
 import com.inv1x.samsung_hackathon_mobile.api.UserAPI;
-import com.inv1x.samsung_hackathon_mobile.model.User;
-import com.inv1x.samsung_hackathon_mobile.model.UserAuthDto;
-
-import java.util.concurrent.CompletableFuture;
-
-import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
     public static int counter = 0;

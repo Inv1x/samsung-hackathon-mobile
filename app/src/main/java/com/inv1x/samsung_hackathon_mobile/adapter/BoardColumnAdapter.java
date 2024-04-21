@@ -9,8 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.inv1x.samsung_hackathon_mobile.R;
-import com.inv1x.samsung_hackathon_mobile.databinding.BoardColumnBoardListBinding;
-import com.inv1x.samsung_hackathon_mobile.databinding.ColumnTaskBoardListBinding;
+import com.inv1x.samsung_hackathon_mobile.databinding.BoardColumnBoardViewBinding;
 import com.inv1x.samsung_hackathon_mobile.model.BoardColumn;
 import com.inv1x.samsung_hackathon_mobile.model.ColumnTask;
 
@@ -24,7 +23,7 @@ public class BoardColumnAdapter extends RecyclerView.Adapter<BoardColumnAdapter.
     @Override
     public BoardColumnViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.board_column_board_list, parent, false);
+                .inflate(R.layout.board_column_board_view, parent, false);
         return new BoardColumnViewHolder(view);
     }
 
@@ -46,20 +45,20 @@ public class BoardColumnAdapter extends RecyclerView.Adapter<BoardColumnAdapter.
 
     public class BoardColumnViewHolder extends RecyclerView.ViewHolder {
 
-        BoardColumnBoardListBinding boardColumnBoardListBinding;
+        BoardColumnBoardViewBinding boardColumnBoardViewBinding;
 
         public BoardColumnViewHolder(@NonNull View view) {
             super(view);
-            boardColumnBoardListBinding = BoardColumnBoardListBinding.bind(view);
+            boardColumnBoardViewBinding = BoardColumnBoardViewBinding.bind(view);
         }
 
         public void bind(BoardColumn boardColumn) {
-            boardColumnBoardListBinding.heading.setText(boardColumn.getHeading());
+            boardColumnBoardViewBinding.heading.setText(boardColumn.getHeading());
             ColumnTaskAdapter childMembersAdapter = new ColumnTaskAdapter();
             List<ColumnTask> newColumnTasks = new ArrayList<>(boardColumn.getColumnTasks());
             childMembersAdapter.addAll(newColumnTasks);
-            boardColumnBoardListBinding.columnTaskRecyclerView.setLayoutManager(new LinearLayoutManager(boardColumnBoardListBinding.getRoot().getContext(), LinearLayoutManager.VERTICAL, false));
-            boardColumnBoardListBinding.columnTaskRecyclerView.setAdapter(childMembersAdapter);
+            boardColumnBoardViewBinding.columnTaskRecyclerView.setLayoutManager(new LinearLayoutManager(boardColumnBoardViewBinding.getRoot().getContext(), LinearLayoutManager.VERTICAL, false));
+            boardColumnBoardViewBinding.columnTaskRecyclerView.setAdapter(childMembersAdapter);
         }
     }
 }

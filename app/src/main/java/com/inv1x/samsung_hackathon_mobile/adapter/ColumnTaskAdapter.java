@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.inv1x.samsung_hackathon_mobile.R;
-import com.inv1x.samsung_hackathon_mobile.databinding.ColumnTaskBoardListBinding;
+import com.inv1x.samsung_hackathon_mobile.databinding.ColumnTaskBoardViewBinding;
 import com.inv1x.samsung_hackathon_mobile.model.ColumnTask;
 
 import java.util.ArrayList;
@@ -21,7 +21,7 @@ public class ColumnTaskAdapter extends RecyclerView.Adapter<ColumnTaskAdapter.Co
     @Override
     public ColumnTaskViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.column_task_board_list, parent, false);
+                .inflate(R.layout.column_task_board_view, parent, false);
         return new ColumnTaskViewHolder(view);
     }
 
@@ -43,15 +43,15 @@ public class ColumnTaskAdapter extends RecyclerView.Adapter<ColumnTaskAdapter.Co
 
     public class ColumnTaskViewHolder extends RecyclerView.ViewHolder {
 
-        ColumnTaskBoardListBinding columnTaskBoardListBinding;
+        ColumnTaskBoardViewBinding columnTaskBoardViewBinding;
 
         public ColumnTaskViewHolder(@NonNull View view) {
             super(view);
-            columnTaskBoardListBinding = ColumnTaskBoardListBinding.bind(view);
+            columnTaskBoardViewBinding = ColumnTaskBoardViewBinding.bind(view);
         }
 
         public void bind(ColumnTask columnTask) {
-            columnTaskBoardListBinding.description.setText(columnTask.getDescription());
+            columnTaskBoardViewBinding.description.setText(columnTask.getDescription());
         }
     }
 }

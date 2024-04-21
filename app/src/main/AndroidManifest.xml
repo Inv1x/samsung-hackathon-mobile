@@ -20,6 +20,9 @@
             android:name=".ui.RegistrationActivity"
             android:exported="false" />
         <activity
+            android:name=".BoardListActivity"
+            android:exported="false" />
+        <activity
             android:name=".BoardActivity"
             android:exported="false" />
         <activity

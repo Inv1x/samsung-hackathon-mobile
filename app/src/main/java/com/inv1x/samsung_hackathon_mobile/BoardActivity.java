@@ -20,18 +20,20 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class BoardActivity extends AppCompatActivity {
+    private long boardId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_board);
+        boardId = 1;
 
         RecyclerView rv = findViewById(R.id.board_column_recycler_view);
         rv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));
         BoardColumnAdapter boardColumnAdapter = new BoardColumnAdapter();
 
-        CompletableFuture.supplyAsync(() -> MainActivity.boardAPI.getBoard(1))
+        CompletableFuture.supplyAsync(() -> MainActivity.boardAPI.getBoard(boardId))
                 .thenAccept(board ->
                         runOnUiThread(() -> {
                             List<BoardColumn> newBoardColumns = new ArrayList<>(board.getColumns());

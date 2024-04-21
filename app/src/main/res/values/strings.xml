@@ -23,4 +23,6 @@
     <string name="description">Description</string>
     <string name="heading">Heading</string>
     <string name="title">Title</string>
+    <string name="create_board">Создать доску</string>
+    <string name="show">Просмотр</string>
 </resources>
