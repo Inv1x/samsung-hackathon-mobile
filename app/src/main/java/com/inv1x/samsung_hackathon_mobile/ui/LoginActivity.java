@@ -17,7 +17,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 
 
 import com.google.android.material.textfield.TextInputLayout;
-import com.inv1x.samsung_hackathon_mobile.BoardActivity;
+import com.inv1x.samsung_hackathon_mobile.BoardListActivity;
 import com.inv1x.samsung_hackathon_mobile.R;
 import com.inv1x.samsung_hackathon_mobile.api.UserAPI;
 
@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else if (loginInput.getEditText().getText().toString().equals("mail")
                         && passwordInput.getEditText().getText().toString().equals("pass")){
-                    Intent intent = new Intent(LoginActivity.this, BoardActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, BoardListActivity.class);
                     startActivity(intent);
                     finish();
                 }

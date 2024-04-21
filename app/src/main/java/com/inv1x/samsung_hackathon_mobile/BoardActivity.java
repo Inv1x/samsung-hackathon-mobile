@@ -27,7 +27,9 @@ public class BoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_board);
-        boardId = 1;
+        Bundle b = getIntent().getExtras();
+        assert b != null;
+        boardId = b.getLong("boardId");
 
         RecyclerView rv = findViewById(R.id.board_column_recycler_view);
         rv.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false));

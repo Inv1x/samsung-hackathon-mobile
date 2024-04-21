@@ -25,18 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
         boolean userNeedsLogin = checkUserData();
 
-        CompletableFuture.supplyAsync(() -> userAPI.getUserById(1))
-                .thenAccept(user -> Log.d("MainActivity", user.toString()));
-
-        CompletableFuture.supplyAsync(() -> boardAPI.getAllBoards())
-                .thenAccept(boards -> Log.d("MainActivity", boards.toString()));
-
         if (userNeedsLogin) {
             Intent loginIntent = new Intent(this, LoginActivity.class);
             startActivity(loginIntent);
             finish();
         } else {
-            Intent mainIntent = new Intent(this, BoardActivity.class);
+            Intent mainIntent = new Intent(this, BoardListActivity.class);
             startActivity(mainIntent);
             finish();
         }
